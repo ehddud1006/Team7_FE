@@ -6,15 +6,15 @@ FROM base AS deps
 WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
-COPY krampoline/package*.json ./
-RUN npm ci
+COPY /package*.json ./
+RUN yarn install --immutable --immutable-cache --check-cache
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
-COPY krampoline/ .
-RUN npm run build
+COPY . .
+RUN yarn build
 
 FROM base AS runner
 WORKDIR /usr/src/app
