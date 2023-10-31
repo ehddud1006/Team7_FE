@@ -10,7 +10,7 @@ RUN npm install -g yarn
 
 # Install dependencies based on the preferred package manager
 COPY /package*.json ./
-COPY /yarn.loc
+COPY /yarn.lock ./
 COPY /ckeditor5 ./
 RUN yarn install --immutable --immutable-cache --check-cache
 
