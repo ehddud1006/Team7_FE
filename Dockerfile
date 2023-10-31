@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18-alpine
+FROM node:18-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
