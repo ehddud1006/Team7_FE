@@ -5,10 +5,10 @@ FROM krmp-d2hub-idock.9rum.cc/goorm/node:18 AS base
 FROM base AS deps
 WORKDIR /usr/src/app
 
-# Install dependencies based on the preferred package manager
-COPY /package*.json ./
-COPY /yarn.lock ./
-COPY /ckeditor5 ./
+# Install dependencies based on the preferred package managerㄴ
+COPY /package.json ./package.json
+COPY /yarn.lock ./yarn.lock
+COPY /ckeditor5 ./ckeditor5
 RUN yarn install --immutable --immutable-cache --check-cache
 
 # 추가된 라인
