@@ -1,21 +1,25 @@
 # Build stage
 FROM krmp-d2hub-idock.9rum.cc/goorm/node:18 AS base
 
+# yarn 설치
+RUN npm install -g yarn
+
 # Install dependencies only when needed
 FROM base AS deps
 WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
 COPY /package*.json ./
+COPY /yarn.lock ./
 COPY /ckeditor5 ./
-RUN npm install
+RUN yarn install --immutable --immutable-cache --check-cache
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
-RUN npm run build
+RUN yarn build
 
 FROM base AS runner
 WORKDIR /usr/src/app
@@ -41,4 +45,4 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]v
+CMD ["node", "server.js"]
