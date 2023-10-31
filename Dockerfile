@@ -6,7 +6,8 @@ FROM base AS deps
 WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
-COPY . .
+COPY /package*.json ./
+COPY /ckeditor5 ./
 RUN yarn install --immutable --immutable-cache --check-cache
 
 # Rebuild the source code only when needed
@@ -28,9 +29,9 @@ RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder /usr/src/app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /usr/src/app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /usr/src/app/.next/static ./.next/static
+COPY —from=builder /usr/src/app/public ./public
+COPY —from=builder —chown=nextjs:nodejs /usr/src/app/.next/standalone ./
+COPY —from=builder —chown=nextjs:nodejs /usr/src/app/.next/static ./.next/static
 
 USER nextjs
 
