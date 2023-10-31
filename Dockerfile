@@ -6,7 +6,7 @@ FROM base AS deps
 WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
-COPY /package*.json ./
+COPY . .
 RUN yarn install --immutable --immutable-cache --check-cache
 
 # Rebuild the source code only when needed
