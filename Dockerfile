@@ -8,14 +8,14 @@ WORKDIR /usr/src/app
 # Install dependencies based on the preferred package manager
 COPY /package*.json ./
 COPY /ckeditor5 ./
-RUN yarn install --immutable --immutable-cache --check-cache
+RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
-RUN yarn build
+RUN npm run build
 
 FROM base AS runner
 WORKDIR /usr/src/app
