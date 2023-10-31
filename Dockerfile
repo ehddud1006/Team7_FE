@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 # Install dependencies based on the preferred package manager
 COPY /package*.json ./
 COPY /ckeditor5 ./
-RUN npm ci
+RUN npm install
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -41,4 +41,4 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD ["node", "server.js"]v
