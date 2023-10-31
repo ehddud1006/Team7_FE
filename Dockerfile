@@ -5,9 +5,6 @@ FROM krmp-d2hub-idock.9rum.cc/goorm/node:18 AS base
 FROM base AS deps
 WORKDIR /usr/src/app
 
-# yarn 설치
-RUN npm install -g yarn
-
 # Install dependencies based on the preferred package manager
 COPY /package*.json ./
 COPY /yarn.lock ./
