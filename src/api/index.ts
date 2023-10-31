@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api/`,
+  baseURL: `http://3.35.234.197:8080/api/`,
   headers: {
     'Content-Type': 'application/json',
   },

@@ -12,8 +12,6 @@ RUN yarn install --immutable --immutable-cache --check-cache
 # 추가된 라인
 RUN rm -rf ./.next/cache
 
-ENV NEXT_PUBLIC_API_URL=http://3.35.234.197:8080/
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /usr/src/app
