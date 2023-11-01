@@ -17,4 +17,4 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_714d1c9ab4a3:latest
 		  env:
 		  	- name: NEXT_PUBLIC_API_URL
-			  value: http://3.35.234.197:8080/
+	          value: http://3.35.234.197:8080/
