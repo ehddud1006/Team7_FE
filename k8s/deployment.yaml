@@ -14,7 +14,7 @@ spec:
       containers:
         - name: frontend
           # 여러분의 image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_85b653d4067d
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_714d1c9ab4a3
 		  env:
 		  	- name: NEXT_PUBLIC_API_URL
 			  value: http://3.35.234.197:8080/
