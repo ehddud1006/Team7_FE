@@ -7,7 +7,7 @@ import { editorConfiguration } from './plugin';
 import * as Styled from './style';
 
 interface CkEditorProps {
-  handleTILContent: (content: string) => void;
+  handleTILContent?: (content: string) => void;
 }
 
 const CkEditor = (props: CkEditorProps) => {
@@ -29,12 +29,12 @@ const CkEditor = (props: CkEditorProps) => {
         data={tilDetail ? tilDetail.content : defaultData}
         onReady={(editor) => {
           // You can store the "editor" and use when it is needed.
-          handleTILContent(editor.getData());
+          handleTILContent?.(editor.getData());
         }}
         onChange={(event, editor) => {
           const data = editor.getData();
           console.log({ event, editor, data });
-          handleTILContent(editor.getData());
+          handleTILContent?.(editor.getData());
         }}
         onBlur={(event, editor) => {
           console.log('Blur.', editor);

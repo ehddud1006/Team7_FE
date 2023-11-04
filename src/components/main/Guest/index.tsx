@@ -83,7 +83,7 @@ const Guest = () => {
           </Styled.ButtonContainer>
         </SectionStyled.FeatureSection>
       </Styled.Root>
-	  <Editor handleTILContent={'ㅇㅇㅇ'} />
+	  <Editor />
       <Footer />
     </>
   );
