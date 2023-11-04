@@ -8,6 +8,7 @@ import * as SectionStyled from '@/components/main/Guest/FeatureSection/style';
 import Typer from '@/components/main/Guest/Typer';
 import { tilyLinks } from '@/constants/links';
 import * as Styled from './style';
+const Editor = dynamic(() => import('@/components/TILWrite/Ckeditor'), { ssr: false });
 
 const Guest = () => {
   const router = useRouter();
@@ -81,6 +82,7 @@ const Guest = () => {
           </Styled.ButtonContainer>
         </SectionStyled.FeatureSection>
       </Styled.Root>
+	  <Editor handleTILContent={'ㅇㅇㅇ'} />
       <Footer />
     </>
   );
