@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Button from '@/components/common/Button';
 import Footer from '@/components/common/Footer';
