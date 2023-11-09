@@ -91,9 +91,11 @@ export const getRoadmapsById = async (req: { roadmapId: number }) => {
 };
 
 
+
 // 그룹 로드맵 신청
 export const postGroupApply = async (req: { roadmapId: number; body: { content: string } }) => {
   const { roadmapId, body } = req;
+
   const { data } = await axiosInstance.request<NullResultResponse>({
     method: 'POST',
     url: `roadmaps/groups/${roadmapId}/apply`,
@@ -103,9 +105,11 @@ export const postGroupApply = async (req: { roadmapId: number; body: { content: 
   return data;
 };
 
+
 // 틸리 로드맵 신청
 export const postTilyApply = async (req: { roadmapId: number }) => {
   const { roadmapId } = req;
+
   const { data } = await axiosInstance.request<NullResultResponse>({
     method: 'POST',
     url: `roadmaps/tily/${roadmapId}/apply`,

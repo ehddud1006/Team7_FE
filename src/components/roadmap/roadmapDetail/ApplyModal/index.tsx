@@ -12,6 +12,7 @@ import useQueryParam from '@/hooks/useQueryParam';
 
 const ApplyModal = (props: ModalProps) => {
   const { isOpen, onClose } = props;
+
   const roadmapId = Number(useQueryParam('roadmapId'));
 
   const { postGroupApplyAsync, isLoading } = usePostGroupApply();
@@ -31,6 +32,7 @@ const ApplyModal = (props: ModalProps) => {
     const data = await postGroupApplyAsync({ roadmapId: roadmapId, body: { content: formData.content } });
 
     if (data?.code === 200) {
+
       onClose();
       reset();
     }
