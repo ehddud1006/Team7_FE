@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: 'https://k8d9b5279c77da.user-app.krampoline.com/api/',
+  baseURL: 'https://kab0f6629ef44a.user-app.krampoline.com/api/',
   headers: {
     'Content-Type': 'application/json',
   },
