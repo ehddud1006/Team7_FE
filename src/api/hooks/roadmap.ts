@@ -11,7 +11,7 @@ import {
   getRoadmapGroupApply,
   patchRoadmapGroupMemberRole as patchRoadmapGroupMemberRoleAPI,
   deleteRoadmapGroupMember as deleteRoadmapGroupMemberAPI,
-  postRoadmapGroupApplyAccept as postRoadmapGroupApplyAcceptAPI
+  postRoadmapGroupApplyAccept as postRoadmapGroupApplyAcceptAPI,
   deleteRoadmapGroupApplyReject as deleteRoadmapGroupApplyRejectAPI,
   postRoadmapsGroupsParticipate,
   getRoadmapsById,
@@ -199,7 +199,6 @@ export const useGetRoadmapsById = (req: { roadmapId: number }) => {
   return { data, isLoading };
 };
 
-
 export const usePostGroupApply = () => {
   const { mutateAsync, isLoading } = useMutation(postGroupApply);
   const toast = useToast();
@@ -242,7 +241,6 @@ export const usePostTilyApply = () => {
       return data;
     } else return undefined;
   };
-
 
   return { postTilyApplyAsync, isLoading };
 };
