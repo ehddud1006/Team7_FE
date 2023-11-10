@@ -6,7 +6,9 @@ FROM base AS deps
 WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
-COPY . .
+COPY package.json ./
+COPY yarn.lock ./
+COPY ckeditor5 ./ckeditor5
 RUN yarn install --immutable --immutable-cache --check-cache
 
 # 추가된 라인
