@@ -16,9 +16,20 @@ export const Root = styled(Card)`
   }
 `;
 
-export const Badge = styled.div`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.black};
+export const badgeStyles = {
+  group: () => css`
+    background-color: #088906;
+  `,
+  individual: () => css`
+    background-color: #000000;
+  `,
+  tily: () => css`
+    background-color: #ea103c;
+  `,
+};
+
+export const Badge = styled.div<{ category?: 'individual' | 'group' | 'tily' }>`
+  ${({ theme, category }) => css`
     color: ${theme.colors.white};
     font-size: 0.75rem;
     padding: 0.5rem;
@@ -28,10 +39,11 @@ export const Badge = styled.div`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    ${badgeStyles[category!]()};
   `}
 `;
 
-export const Title = styled.h4`
+export const Title = styled.h2`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

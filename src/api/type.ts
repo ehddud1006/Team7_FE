@@ -30,6 +30,7 @@ export interface IdParams {
 export interface IdName {
   id: number;
   name: string;
+  category?: 'individual' | 'group' | 'tily';
 }
 
 // User 인터페이스
@@ -54,7 +55,7 @@ export interface Til {
   id: number;
   createDate: string;
   step: Pick<Step, 'id' | 'title'>;
-  roadmap: IdName;
+  roadmap: IdName & { category: 'individual' | 'group' | 'tily' };
 }
 
 // Step 인터페이스
