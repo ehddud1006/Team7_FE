@@ -5,7 +5,7 @@ const TILY_LINKS = {
   register: () => '/auth/register/',
   login: () => '/auth/login',
   kakaoLogin: () =>
-    `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=872b661d1b5d025d01a76fdb6936f3fb&redirect_uri=https://kab0f6629ef44a.user-app.krampoline.com/auth/kakao/callback`,
+    `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=872b661d1b5d025d01a76fdb6936f3fb&redirect_uri=https://kc29be941feb6a.user-app.krampoline.com/auth/kakao/callback`,
   passwordVerify: () => '/auth/change-password/verify',
   changePassword: () => '/auth/change-password/',
   roadmap: () => '/roadmap?category=tily',
