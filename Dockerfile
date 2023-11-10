@@ -45,7 +45,7 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-ENV NEXT_PUBLIC_KAKAO_CLIENT_ID 872b661d1b5d025d01a76fdb6936f3fb
-ENV NEXT_PUBLIC_KAKAO_REDIRECT_URI https://kab0f6629ef44a.user-app.krampoline.com/auth/kakao/callback
+ENV NEXT_PUBLIC_KAKAO_CLIENT_ID=872b661d1b5d025d01a76fdb6936f3fb
+ENV NEXT_PUBLIC_KAKAO_REDIRECT_URI=https://kab0f6629ef44a.user-app.krampoline.com/auth/kakao/callback
 
 CMD ["node", "server.js"]
