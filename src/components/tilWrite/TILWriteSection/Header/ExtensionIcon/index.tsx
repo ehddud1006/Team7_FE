@@ -54,6 +54,7 @@ const ExtensionIcon = (props: ExtensionIconProps) => {
         handleSubmitTILContentToGithub={handleSubmitTILContentToGithub}
         isChromeExtensionInstall={isChromeExtensionInstall}
       />
+
     </>
   );
 };
