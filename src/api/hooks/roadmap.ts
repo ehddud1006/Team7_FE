@@ -102,7 +102,7 @@ export const usePostRoadmaps = () => {
       onSuccess: () => {
         queryClient.invalidateQueries(ROADMAP_QUERY_KEY.getRoadmapsMy());
         toast.showBottom({
-          message: '로드맵이 생성되었습니다.',
+          message: 'STEP을 추가해보세요.',
         });
       },
       onError: handleError,
@@ -175,14 +175,11 @@ export const useDeleteRoadmaps = () => {
   const { mutateAsync } = useMutation(deleteRoadmaps);
 
   const deleteRoadmapsAsync = async (req: { roadmapId: number }) => {
-    const { roadmapId } = req;
-
     const data = await mutateAsync(req, {
       onSuccess: () => {
         queryClient.invalidateQueries(ROADMAP_QUERY_KEY.getRoadmapsMy());
-        queryClient.invalidateQueries(ROADMAP_QUERY_KEY.getRoadmapSteps(roadmapId));
         toast.showBottom({
-          message: '로드맵이 삭제 되었습니다.',
+          message: '삭제 되었습니다.',
         });
       },
       onError: handleError,
