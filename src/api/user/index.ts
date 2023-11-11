@@ -104,3 +104,5 @@ export const postUserProfileImage = async (req: { param: { userId: number }; bod
 
   return data;
 };
+
+
