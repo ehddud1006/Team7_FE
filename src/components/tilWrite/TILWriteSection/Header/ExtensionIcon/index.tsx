@@ -76,6 +76,7 @@ const ExtensionIcon = (props: ExtensionIconProps) => {
         handleClose={handleClose}
         handleSubmitTILContentToGithub={handleSubmitTILContentToGithub}
       />
+
     </>
   );
 };

@@ -224,17 +224,23 @@ export const usePostGroupApply = () => {
 
 export const usePostTilyApply = () => {
   const { mutateAsync, isLoading } = useMutation(postTilyApply);
-
+  const toast = useToast();
   const postTilyApplyAsync = async (req: { roadmapId: number }) => {
     const { roadmapId } = req;
     if (roadmapId > 0) {
-      const data = await mutateAsync(req);
-
+      const data = await mutateAsync(req, {
+        onError: () => {
+          toast.showBottom({
+            message: '신청에 실패하였습니다.',
+          });
+        },
+      });
       return data;
     } else return undefined;
   };
 
   return { postTilyApplyAsync, isLoading };
+
 };
 
 // 참가 코드로 로드맵 신청하기
@@ -260,6 +266,7 @@ export const usePostRoadmapsGroupsParticipate = () => {
   };
 
   return { postRoadmapsGroupsParticipateAsync, isLoading, isError };
+
 };
 
 // 로드맵 구성원 조회하기

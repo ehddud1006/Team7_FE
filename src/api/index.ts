@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: 'https://k50d31201bb8ea.user-app.krampoline.com/api/',
   headers: {
     'Content-Type': 'application/json',
   },
